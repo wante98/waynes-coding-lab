@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue.js 入門課程筆記 | Wayne&#39;s CodingHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Vue 介紹Vue 是輕量級的 js 漸進式框架，使用到 MVVM Modelhttps:&#x2F;&#x2F;ithelp.ithome.com.tw&#x2F;articles&#x2F;10272564?sc&#x3D;iThomeRdirective（指令）是我們在 Vue 自定義的指令。當我們要重複處理某些工作，例如轉換時間呈現的格式的工作，可以使用 directive 來處理。我們可以在全局或局部註冊 directive，之後套在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js 入門課程筆記">
+<meta property="og:url" content="https://wante98.github.io/vuejsnote/index.html">
+<meta property="og:site_name" content="Wayne&#39;s CodingHub">
+<meta property="og:description" content="Vue 介紹Vue 是輕量級的 js 漸進式框架，使用到 MVVM Modelhttps:&#x2F;&#x2F;ithelp.ithome.com.tw&#x2F;articles&#x2F;10272564?sc&#x3D;iThomeRdirective（指令）是我們在 Vue 自定義的指令。當我們要重複處理某些工作，例如轉換時間呈現的格式的工作，可以使用 directive 來處理。我們可以在全局或局部註冊 directive，之後套在">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-30T10:30:55.000Z">
+<meta property="article:modified_time" content="2023-07-06T11:44:20.435Z">
+<meta property="article:author" content="Wayne Yu">
+<meta property="article:tag" content="vue.js">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Wayne's CodingHub" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wayne&#39;s CodingHub</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">程式開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wante98.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vuejsnote" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/vuejsnote/" class="article-date">
+  <time class="dt-published" datetime="2023-03-30T10:30:55.000Z" itemprop="datePublished">2023-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue.js 入門課程筆記
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="Vue-介紹"><a href="#Vue-介紹" class="headerlink" title="Vue 介紹"></a>Vue 介紹</h3><p>Vue 是輕量級的 js 漸進式框架，使用到 MVVM Model<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10272564?sc=iThomeR">https://ithelp.ithome.com.tw/articles/10272564?sc=iThomeR</a><br>directive（指令）是我們在 Vue 自定義的指令。當我們要重複處理某些工作，例如轉換時間呈現的格式的工作，可以使用 directive 來處理。我們可以在全局或局部註冊 directive，之後套在 DOM 元素或元件上使用。另外，註冊 directive 時，可以設定不同生命週期函式來執行程式碼。 以下會再作詳細解說。主要會以 Vue 3 作為主要示範例子，但也會補充一些 Vue 2 的做法。</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/directive-dong-tai-directive-yv1en?file=/src/main.js">https://codesandbox.io/s/directive-dong-tai-directive-yv1en?file=/src/main.js</a></p>
+<p>V 指令<br>V -Model 雙向綁定數據</p>
+<p>問題回答</p>
+<p>所謂父子元件傳遞資料，就是透過使用 props 和 emits 來完成。而 v-model 只是結合使用 props 和 emits 的語法糖。例如在 input 綁上 v-model 時，背後其實是監聽 input 事件，當 input 事件觸發，就更新你在 v-model 所指定的值。<br>套用以上原理，假設我要把子元件裏的 input 與父元件的資料實現雙向綁定。做法就是：</p>
+<p>• 在父元件，為子元件綁上 v-model&#x3D;”你要更新的值”。</p>
+<p>• 回到子元件裏，以 props 傳入在父元件的資料。並且監聽 input 事件以及設定 emit。當 input 事件觸發，就更新在父元件的資料。</p>
+<p>v-for 列表渲染</p>
+<p><a target="_blank" rel="noopener" href="https://www.cythilya.tw/2017/04/27/vue-list-rendering/">https://www.cythilya.tw/2017/04/27/vue-list-rendering/</a></p>
+<p>v 動態綁定屬性<br>v-on 綁定事件<br>v-if v-ifelse v-else<br>v-show 列表控制 隱藏 v&#x3D;hide<br>v-show 會被編譯成指令，條件不滿足時控製樣式將此節點隱藏（display:none）<br>vhtml 解析 html 標籤<br>v-if 適用於在運行時很少改變條件，不需要頻繁切換條件的場景。<br>v-show 適用於需要非常頻繁切換條件的場景。<br>擴展補充：display:none 、 visibility:hidden 和 opacity:0 之間的區別？<br>三者公共點都是隱藏。不同點： 一、是否佔據空間。 display:none，隱藏之後不佔位置；visibility:hidden、opacity:0，隱藏後任然佔據位置。 二、子元素是否繼承。 display:none — 不會被子元素繼承，父元素都不存在了，子元素也不會顯示出來。 visibility:hidden — 會被子元素繼承，通過設置子元素 visibility:visible 來顯示子元素。 opacity:0 — 會被子元素繼承，但是不能設置子元素 opacity:0 來先重新顯示。 三、事件綁定。 display:none 的元素都已經不存在了，因此無法觸發他綁定的事件。 visibility:hidden 不會觸發他上面綁定的事件。 opacity:0 元素上面綁定的事件時可以觸發的。<br>寫 vue 遇到的初步問題<br>括號 數量 不對<br>vue 版本裝部隊 程式會無法正確顯示解果<br>宣告 跟監聽的元素要放對 不然也是追蹤步道<br>變數要寫對!!</p>
+<p>陣列操作<br>如上所示，使用 vm.list.reverse() 改變元素順序－反序排列，其他操作陣列的 method 還有：<br>• push()：新增元素。<br>• pop()：刪除最新加入的元素。<br>• shift()：刪除第一個 (即最舊的) 元素。<br>• unshift()：加入元素至第一個位置。<br>• splice()：加入或移除元素。<br>• sort()：由小至大排序。<br>• reverse()：元素反序排列。<br>• filter()：過濾陣列的元素，並將符合條件的元素傳回成為一個新陣列。<br>• concat()：連接陣列，會返回一個新的陣列。<br>• slice()：切割陣列，會返回一個新的陣列。</p>
+<p>Vuex<br>Mapsetter<br>Mutation 如父的方法 可以動過 commit 去調用裡面的參數 第一個參數是 state 第二個參數是 payload Set 啦<br>Getter 相當于 vie 的計算屬性 通過 getter 的進一步處理,得到我們想要的值 並且允許穿參數 第一個參數是 state<br>This 的五種用法<br>Es6 箭頭函式<br>New 的關鍵字<br>Call apply bind<br>哪個物件呼叫該函式、函式內的 this 會指向該物件<br>This 指向全域<br>Vue js 部署至 IIS<br>1.not run build<br>設定 rewrite 2.設定網路站台<br><a target="_blank" rel="noopener" href="https://happyhand.github.io/2019/02/14/vue-%E9%9A%A8%E6%89%8B%E7%AD%86%E8%A8%98-IIS-%E6%9E%B6%E8%A8%AD-vue-%E7%AB%99%E5%8F%B0/#%E5%BB%BA%E7%BD%AE%E7%B6%B2%E9%A0%81">https://happyhand.github.io/2019/02/14/vue-隨手筆記-IIS-架設-vue-站台/#建置網頁</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wante98.github.io/vuejsnote/" data-id="cljr2wv4b000208vg4t4t1aje" data-title="Vue.js 入門課程筆記" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/" rel="tag">vue.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/vuedebug1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue.js 2.0 除錯紀錄
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/" rel="tag">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-js/" rel="tag">vue.js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/career/" style="font-size: 10px;">career</a> <a href="/tags/vue-js/" style="font-size: 20px;">vue.js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/rookieevolution/">如何從菜鳥軟體工程師進化成資深工程師?</a>
+          </li>
+        
+          <li>
+            <a href="/vue3note/">Vue.js 3 課程筆記</a>
+          </li>
+        
+          <li>
+            <a href="/vuedebug1/">Vue.js 2.0 除錯紀錄</a>
+          </li>
+        
+          <li>
+            <a href="/vuejsnote/">Vue.js 入門課程筆記</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Wayne Yu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue.js 3 課程筆記 | Wayne&#39;s CodingHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前置觀念ES6 語法ECMAScript 6 (簡稱 ES6)，是 JavaScript 語言新一代的標準，在 2015 年 6 月正式發佈。跟以前的 Javascript 有以下差別作用域 Scope">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js 3 課程筆記">
+<meta property="og:url" content="https://wante98.github.io/vue3note/index.html">
+<meta property="og:site_name" content="Wayne&#39;s CodingHub">
+<meta property="og:description" content="前置觀念ES6 語法ECMAScript 6 (簡稱 ES6)，是 JavaScript 語言新一代的標準，在 2015 年 6 月正式發佈。跟以前的 Javascript 有以下差別作用域 Scope">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-01T05:56:02.000Z">
+<meta property="article:modified_time" content="2023-07-06T11:44:49.703Z">
+<meta property="article:author" content="Wayne Yu">
+<meta property="article:tag" content="vue.js">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Wayne's CodingHub" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wayne&#39;s CodingHub</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">程式開發筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wante98.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-vue3note" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/vue3note/" class="article-date">
+  <time class="dt-published" datetime="2023-07-01T05:56:02.000Z" itemprop="datePublished">2023-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue.js 3 課程筆記
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="前置觀念"><a href="#前置觀念" class="headerlink" title="前置觀念"></a>前置觀念</h3><p>ES6 語法<br>ECMAScript 6 (簡稱 ES6)，是 JavaScript 語言新一代的標準，在 2015 年 6 月正式發佈。<br>跟以前的 Javascript 有以下差別<br>作用域 Scope</p>
+<span id="more"></span>
+
+<p>箭頭函式 ArrowFunction</p>
+<p>新增變數宣告 let const</p>
+<p>解構 Deconstructor</p>
+<p>Node.js: Javascript 運行在伺服器端的執行環境 Runtime</p>
+<p>SPA 架構：<br>SPA （Single-Page Application） 顧名思義，就是整個網站實際上其實只有一個頁面。 為了解決上述提到的頁面重整的問題，我們可以使用 AJAX （Asynchronous JavaScript And XML，非同步的 JavaScript 與 XML） 的技術來處理，令其在送出資料且收到伺服器的回覆後，只針對需要更新的頁面元素來更新</p>
+<p>傳統是使用 MPA，一個畫面，一個 HTML 檔案</p>
+<h3 id="Vue-js-相關介紹"><a href="#Vue-js-相關介紹" class="headerlink" title="Vue.js 相關介紹"></a>Vue.js 相關介紹</h3><p>Vue.js 是一個開源 MVVM 的 Javascript 框架，也算是 SPA(單頁應用程式)</p>
+<p>為何要使用框架進行前端開發?</p>
+<p>(1)舊有技術操作 DOM 稍嫌臃腫</p>
+<p>(2)Component 能增加前端開發、維護效率</p>
+<h3 id="Vue-js-運行原理"><a href="#Vue-js-運行原理" class="headerlink" title="Vue.js 運行原理"></a>Vue.js 運行原理</h3><p>(vite.config or vue.config)-&gt;app.vue-&gt;main.js-&gt;index.html</p>
+<h3 id="Vue-js-生態系"><a href="#Vue-js-生態系" class="headerlink" title="Vue.js 生態系"></a>Vue.js 生態系</h3><p>Vuex：狀態管理庫(類似 React 的 Redux)</p>
+<p>Pinia：最新一代的 Vuex 狀態管理庫，相對於 Vuex 移除 Mutation 的部分</p>
+<p>Vue CLI：可以在本機建立 Vue 專案，不需要在每個頁面引入 VUE 的 CDN</p>
+<p>Vue Router：路由設定</p>
+<p>Axios：串接 API 的套件</p>
+<h3 id="Vue-語法糖"><a href="#Vue-語法糖" class="headerlink" title="Vue 語法糖"></a>Vue 語法糖</h3><p>v-model</p>
+<p>v-if</p>
+<p>ref</p>
+<p>emit</p>
+<p>props</p>
+<h3 id="Pinia"><a href="#Pinia" class="headerlink" title="Pinia"></a>Pinia</h3><p>新一代的狀態管理工具</p>
+<p>mapState- readonly<br>mapWritableState-changeable<br>mapActions 類似 script 中的 method</p>
+<h3 id="Vite"><a href="#Vite" class="headerlink" title="Vite"></a>Vite</h3><p>Vue 創始神兜出來的 Vue 建構工具，能比傳統 Vue CLI 快 80%的執行速度(根據我自己實驗公司專案在同樣套件、同樣頁面結果)</p>
+<h3 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h3><p>動態路由</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//傳參數</span><br><span class="line">path:dynamic:id</span><br><span class="line">//接收參數</span><br><span class="line">this.$router.param.formStatus()</span><br></pre></td></tr></table></figure>
+
+<p>*注意在開發 Web App 時，一般會不希望再 URL 上放太多資訊。所以這通常不會用到</p>
+<p>可以看到 Vue CLI 專案有個 App.vue 裡面有<router-view/>就是在這邊去做 router 的切換</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;router-view/&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>嵌套路由</p>
+<p>載入慢，後續切換快，適合小型專案</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Home from &#x27;@/views/Home.vue&#x27;</span><br><span class="line">import Login from &#x27;@/views/Login.vue&#x27;</span><br><span class="line">const routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/SsoLogin&#x27;,</span><br><span class="line">    name: &#x27;SsoLogin&#x27;,</span><br><span class="line">    component: SsoLogin</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/Login&#x27;,</span><br><span class="line">    name: &#x27;Login&#x27;,</span><br><span class="line">    component: Login</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>載入快，後面切換頁面稍慢，適合構建大型 Web App</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">    &#123; path: &#x27;/SsoLogin&#x27;, name: &#x27;SsoLogin&#x27;, component: () =&gt; import(&#x27;../views/SsoLogin.vue&#x27;) &#125;,</span><br><span class="line">    &#123; path: &#x27;/Login&#x27;, name: &#x27;Login&#x27;, component: () =&gt; import(&#x27;../views/Login.vue&#x27;) &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>切換路由的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#x27;Home&#x27;)</span><br><span class="line">this.$router.push(&#123;name&#x27;about&#x27;,param:&#x27;about&#x27;&#125;)</span><br><span class="line">this.$router.go(-10)</span><br></pre></td></tr></table></figure>
+
+<p>路由切換傳值<br>Vue 2 寫法：</p>
+<p>Vue 3 寫法：(Vue 3 已廢除 param 函式)</p>
+<h3 id="Vue-2-與-Vue-3-的差別"><a href="#Vue-2-與-Vue-3-的差別" class="headerlink" title="Vue 2 與 Vue 3 的差別"></a>Vue 2 與 Vue 3 的差別</h3><p>(1) Vue 3 不支援 IE</p>
+<p>(2) Vue 3 支援 Composition API，相較於 Vue 2 Option API，script 裡面函式邏輯會比較單純，不會那麼雜</p>
+<p>(3) View Design 的 div slot&#x3D;’header’要改成 template #header</p>
+<p>(4) h 函式渲染方式有改變</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wante98.github.io/vue3note/" data-id="cljqqgevz0001hwbw8syhfq98" data-title="Vue.js 3 課程筆記" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/" rel="tag">vue.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/rookieevolution/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何從菜鳥軟體工程師進化成資深工程師?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/vuedebug1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue.js 2.0 除錯紀錄</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/career/" rel="tag">career</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-js/" rel="tag">vue.js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/career/" style="font-size: 10px;">career</a> <a href="/tags/vue-js/" style="font-size: 20px;">vue.js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/rookieevolution/">如何從菜鳥軟體工程師進化成資深工程師?</a>
+          </li>
+        
+          <li>
+            <a href="/vue3note/">Vue.js 3 課程筆記</a>
+          </li>
+        
+          <li>
+            <a href="/vuedebug1/">Vue.js 2.0 除錯紀錄</a>
+          </li>
+        
+          <li>
+            <a href="/vuejsnote/">Vue.js 入門課程筆記</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Wayne Yu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
